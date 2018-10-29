@@ -18,7 +18,7 @@ class DataAnalysis():
         self.lagou = self.db.lagou
         self.position = position
         self.city = city
-        self.filename = 'C:\project\zhaopin\stopwords.txt'
+        self.filename = 'D:\GIT\zhaopin\stopwords.txt'
         self.search_name = list(self.lagou.find({'search_name': self.position}))
 
 
