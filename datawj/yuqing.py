@@ -5,7 +5,7 @@ import jieba
 # http://blog.csdn.net/eastmount/article/details/50323063
 # http://blog.csdn.net/eastmount/article/details/50256163
 # http://blog.csdn.net/lsldd/article/details/41542107
-
+"""舆情分析"""
 ####################################
 #         第一步 读取数据及分词
 #
