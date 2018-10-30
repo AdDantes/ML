@@ -114,7 +114,9 @@ def logistic():
     lr.fit(X_train, y_train)
     #5.预测，评价模型
     y_predict = lr.predict(X_test)
+    score = lr.score(X_test,y_test)
     weights = lr.coef_
+    print('精准度为：',score)
     print("逻辑回归中的权重为：", weights)
     ret = classification_report(y_test, y_predict, labels=[2, 4], target_names=["良性", "恶性"])
     print(ret)
