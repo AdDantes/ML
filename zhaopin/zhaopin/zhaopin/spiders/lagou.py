@@ -11,7 +11,7 @@ class LagouSpider(scrapy.Spider):
     allowed_domains = ['lagou.com']
     start_urls = ['http://lagou.com/']
     pn = 1
-    kd = '爬虫工程师'
+    kd = 'PHP工程师'
     first = 'true'
 
     def start_requests(self):

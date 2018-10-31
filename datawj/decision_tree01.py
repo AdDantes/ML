@@ -1,5 +1,6 @@
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.feature_extraction import DictVectorizer
+from sklearn.model_selection import train_test_split
 import pandas as pd
 
 
@@ -9,10 +10,7 @@ print(data)
 x = data.iloc[:, 1:5]
 y = data['销量']
 #数据划分
-x_train = x[:26]
-x_test = x[26:]
-y_train = y[:26]
-y_test = y[26:]
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=.30)
 #特征工程：字典特征抽取
 dict = DictVectorizer()
 X_train = x_train.to_dict(orient='records')  # records : list like :[{column -> value}, ... , {column -> value}]

@@ -16,6 +16,7 @@ def zhenggui():
     """
     #1.加载数据
     boston = load_boston()
+    print(boston)
     #2.分割数据
     X_train, X_test, y_train, y_test = train_test_split(boston.data,boston.target,test_size=0.25)
     #3.标准化处理
@@ -123,7 +124,7 @@ def logistic():
 
 
 if __name__ == '__main__':
-    # zhenggui()
+    zhenggui()
     # tidu()
     # ridge()
-    logistic()
+    # logistic()

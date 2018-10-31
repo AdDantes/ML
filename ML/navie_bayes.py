@@ -38,7 +38,7 @@ def navie_bayes():
     #2.划分数据
     X_train, X_test, y_train, y_test = train_test_split(news.data,news.target,test_size=0.25,random_state=1)
     #3.特征工程（tf-idf处理特征）
-    tfidf = TfidfVectorizer(f
+    tfidf = TfidfVectorizer()
     X_train = tfidf.fit_transform(X_train)
     X_test = tfidf.transform(X_test)
     #4.选择估计器
@@ -48,6 +48,7 @@ def navie_bayes():
     y_predict = mn.predict(X_test)
     #6.评测数据
     score = mn.score(X_test,y_test)
+
     print('预测的结果为：', y_predict)
     print('精准度为：', score)
     ret = classification_report(y_test,y_predict)

@@ -78,7 +78,7 @@ def random_forest():
     X_test = dict.transform(X_test)
 
     # 4.选择估计器，训练模型 --随机森林
-    rfc = RandomForestClassifier(n_estimators=15) #n_estimators：森林里树木的数量
+    rfc = RandomForestClassifier(max_depth=8,n_estimators=15) #n_estimators：森林里树木的数量
     rfc.fit(X_train,y_train)
     y_predict = rfc.predict(X_test)
     score = rfc.score(X_test,y_test)

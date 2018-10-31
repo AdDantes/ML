@@ -1,6 +1,7 @@
 from sklearn.linear_model import LogisticRegression,RandomizedLogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 import pandas as pd
 
 #是否录取
@@ -21,11 +22,7 @@ t = data[data.columns[rlr.get_support(True)]]
 #数据划分
 y = t.iloc[:,0]
 x = t.iloc[:,1:2]
-X_train = x[:380]
-X_test = x[380:]
-Y_train = y[:380]
-Y_test = y[380:]
-
+X_train,X_test,Y_train,Y_test = train_test_split(x,y,test_size=.2)
 #使用逻辑回归训练模型
 lr = LogisticRegression()
 lr.fit(X_train,Y_train)
