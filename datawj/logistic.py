@@ -1,6 +1,4 @@
 from sklearn.linear_model import LogisticRegression,RandomizedLogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 import pandas as pd
 
