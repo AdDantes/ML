@@ -44,6 +44,7 @@ print(corpus)
 #
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.linear_model import LogisticRegression
 
 vectorizer = CountVectorizer()  # 将文本中的词语转换为词频矩阵
 X = vectorizer.fit_transform(corpus)  # 计算个词语出现的次数
@@ -69,7 +70,7 @@ x_test = X[8:]
 y_train = [1, 1, 1, 0, 1, 0, 0, 1]
 y_test = [0, 0]
 # 调用MultinomialNB分类器
-clf = MultinomialNB().fit(x_train, y_train)
+clf = LogisticRegression().fit(x_train, y_train)
 pre = clf.predict(x_test)
 print(u"预测结果:", pre)
 print(u"真实结果:", y_test)

@@ -21,7 +21,7 @@ LOG_LEVEL = 'INFO'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 DOWNLOAD_TIMEOUT = 10
-RETRY_HTTP_CODES = [500, 502, 503, 504, 522, 524, 408]
+RETRY_HTTP_CODES = [500, 502, 503, 504, 522, 524, 408, 404]
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 16
 

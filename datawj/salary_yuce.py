@@ -7,7 +7,6 @@ from sklearn.model_selection import GridSearchCV
 import re
 import math
 
-
 """职业薪资预测"""
 client = MongoClient()
 db = client['zhaopin']
@@ -45,26 +44,25 @@ for i in data['salary']:
     salary.append(j)
 
 # print(data.columns)
-x = data[['city','education','search_name','workYear']]
+x = data[['city', 'education', 'search_name', 'workYear']]
 y = salary
 
-
-x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.25)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25)
 dv = DictVectorizer()
 x_train = x_train.to_dict(orient='records')
 # x_test = {'city':city, 'education':education,'search_name':position, 'workYear':workYear}
-x_test = x_test.to_dict(orient = 'records')
+x_test = x_test.to_dict(orient='records')
 x_train = dv.fit_transform(x_train)
 x_test = dv.transform(x_test)
-rf = RandomForestClassifier(max_depth=10,n_estimators=10)
-rf.fit(x_train,y_train)
+rf = RandomForestClassifier(max_depth=10, n_estimators=10)
+rf.fit(x_train, y_train)
 pre = rf.predict(x_test)
-score = rf.score(x_test,y_test)
+score = rf.score(x_test, y_test)
 print(pre)
 print(score)
 
-gs = GridSearchCV(rf,param_grid={'n_estimators':[5,10,15,20,25,30]},cv=5)
-gs.fit(x_train,y_train)
+gs = GridSearchCV(rf, param_grid={'n_estimators': [5, 10, 15, 20, 25, 30]}, cv=5)
+gs.fit(x_train, y_train)
 y_predict = gs.predict(x_test)
 print('使用随机森林并网格搜索优化参数后的精准度为：', gs.score(x_test, y_test))
 print('在交叉验证中得到的最好结果：', gs.best_score_)

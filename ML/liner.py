@@ -125,6 +125,6 @@ def logistic():
 
 if __name__ == '__main__':
     zhenggui()
-    # tidu()
+    tidu()
     # ridge()
     # logistic()
