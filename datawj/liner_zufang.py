@@ -51,6 +51,7 @@ plt.xlabel('area')
 plt.ylabel('rent')
 plt.show()
 
+
 # x['area'].fillna(x['area'].mean(),axis=0,inplace=True)
 # x['metro_distance'].fillna(x['metro_distance'].mean(),axis=0,inplace=True)
 
