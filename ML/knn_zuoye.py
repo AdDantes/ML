@@ -14,7 +14,7 @@ X = iris.data
 #2.X_test：测试的特征数据
 #3.y_train:训练的目标数据
 #4.y_test:测试的目标数据
-X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.25,random_state=1)
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.25,random_state=None)
 #特征工程（数据的标准化处理）
 ss = StandardScaler()
 X_train = ss.fit_transform(X_train)
