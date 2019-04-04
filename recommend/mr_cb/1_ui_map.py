@@ -97,6 +97,25 @@ def sum_map():
         print("%s\t%s" % (i_a + "" + i_b, s))
 
 def sum_reduce():
-    pass
+    cur_ii_pair = None
+    score = 0.0
+    for line in sys.stdin:
+        ii_pair,s = line.strip().split('\t')
+        if not cur_ii_pair:
+            cur_ii_pair = ii_pair
+        if ii_pair != cur_ii_pair:
+            ss = cur_ii_pair.strip().split('')
+            if len(ss)!= 2 :
+                continue
+            itema, itemb = ss
+            print('%s\t%s\t%s'%(itema,itemb,score))
+            cur_ii_pair = ii_pair
+            score = 0.0
+        score+=float(s)
+    ss = cur_ii_pair.strip().split('')
+    if len(ss) != 2:
+        sys.exit()
+    itema, itemb = ss
+    print('%s\t%s\t%s' % (itema, itemb, score))
 if __name__ == '__main__':
     ii_pair_map()
