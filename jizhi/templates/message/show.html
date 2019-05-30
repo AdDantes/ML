@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for message in messages %}
+    用户名：{{message.mess_username}}</br>
+    留言内容：{{message.mess_contents}}</br>
+    留言时间：{{message.mess_time}}</br>
+    <hr>
+{%endfor%}
+</body>
+</html>
